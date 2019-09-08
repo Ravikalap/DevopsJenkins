@@ -9,6 +9,8 @@ COPY . /usr/src/app
 
 # Install app dependencies
 RUN mvn install
+RUN docker build -t jenkins-demo .
+RUN docker images
 
 # Copy application to /app directory
 COPY . /app
