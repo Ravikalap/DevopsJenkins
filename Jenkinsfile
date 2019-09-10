@@ -4,7 +4,7 @@ pipeline {
             image 'maven:3'
                 }
              }
-        stages {
+       // stages {
                
             stage ('checkout code') {
                checkout scm
@@ -26,7 +26,7 @@ pipeline {
              stage ('Deployment') {
                sh 'cp target/*.war /app'
             }
-            }
+            //}
         }
      }
             
