@@ -4,19 +4,17 @@ pipeline {
             image 'maven:3'
                 }
              }
+       
        stages {
                
             stage ('checkout code') {
-                   steps{
                          checkout scm
-                   }
             }
                
             stage ('Build') {
-                   steps {
                      sh "mvn clean install"
-                   }
             }
+              
             stage ('Test') {
               steps {
                  sh 'mvn test'
@@ -27,10 +25,9 @@ pipeline {
                           }
                         }
                      }
+              
              stage ('Deployment') {
-                    steps {
                sh 'cp target/*.war /app'
-                    }
             }
             }
         }
