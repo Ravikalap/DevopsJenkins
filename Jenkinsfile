@@ -6,13 +6,16 @@ pipeline {
              }
        
      stages {    
-            stage ('pull git latest changes in the repo') 
-                     {
+            stage ('pull git latest changes in the repo') {
+                     steps {
                       git 'https://github.com/Ravikalap/DevopsJenkins.git'
                     }
+            }
                            
             stage ('Build') {
-                     sh "mvn clean install"
+                   steps {
+                          sh "mvn clean install"
+                          }
                      }
               
             stage ('Test') {
@@ -27,7 +30,9 @@ pipeline {
                      }
               
              stage ('Deployment') {
+                    steps{
                sh 'cp target/*.war /app'
                      }
+             }
             }
         } 
