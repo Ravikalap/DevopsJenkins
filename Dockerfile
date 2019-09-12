@@ -1,5 +1,5 @@
 #Pull base image
-FROM Apache Maven: 3.3.9
+FROM Apache Maven:3.3.9
 
 # Install app dependencies
 RUN mvn install
