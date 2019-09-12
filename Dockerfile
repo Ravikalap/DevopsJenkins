@@ -2,7 +2,7 @@
 FROM tomcat:8
 
 # Copy application to /app directory
-ADD target/webapp.war webapp/app
+COPY target/webapp.war /usr/local/tomcat/
 
 # Provide defaults for an executing container
 EXPOSE 8082
