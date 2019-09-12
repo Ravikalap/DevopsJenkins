@@ -2,7 +2,7 @@
 FROM tomcat:8
 
 # Copy application to /app directory
-COPY ./webapp.war /usr/local/tomcat/webapps
+COPY ${WORKSPACE}/Dockerizejenkinspipe/webapp/target/webapp.war ${WORKSPACE}/DevopsJenkins
 
 # Provide defaults for an executing container
 EXPOSE 8080
