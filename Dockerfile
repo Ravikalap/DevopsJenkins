@@ -1,5 +1,5 @@
 #Pull base image
-FROM apache:8
+FROM apache:latest
 
 # Copy application to /app directory
 COPY ./var/lib/jenkins/workspace/Dockerizejenkinspipe/webapp/target/*.war /app
