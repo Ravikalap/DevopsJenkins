@@ -2,7 +2,8 @@
 FROM tomcat:8
 
 # Copy application to /app directory
-COPY target/*.war /app
+ADD target/*webapp.war /app
 
 # Provide defaults for an executing container
 EXPOSE 8082
+CMD ["catalina.sh", "run"]
