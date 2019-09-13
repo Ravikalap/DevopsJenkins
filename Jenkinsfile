@@ -19,7 +19,7 @@ node {
    }
    stage('Docker') {
              sh  'docker build -t jenkins-demo:${BUILD_NUMBER} .'
-             sh 'docker login --username=ravikala --password=******'
+             sh 'docker login --username=ravikala --password=ravisasi6'
              sh 'docker tag jenkins-demo:${BUILD_NUMBER} ravikala/jenkins-demo:latest'
               sh  'docker push ravikala/jenkins-demo:latest'
    }
